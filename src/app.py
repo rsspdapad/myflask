@@ -1,11 +1,11 @@
+app = Dash(__name__, external_stylesheets=[...])
+
 import pathlib
 import pandas as pd
 import plotly.graph_objects as go
 from dash import Dash, dcc, html, Input, Output
 from datetime import datetime
 import os
-
-
 
 
 
@@ -31,7 +31,6 @@ def load_data(files):
         dataframes[i] = df
     return dataframes
 
-# Create a Dash app
 # Create a Dash app
 app = Dash(__name__, external_stylesheets=[
     'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css',
@@ -372,8 +371,3 @@ def update_graph_live(analysis, location, parameter, frequency, n_clicks):
 # Run the app
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-
-if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 8050))
-    app.run_server(debug=False, port=port)
