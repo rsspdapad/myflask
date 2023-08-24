@@ -1,8 +1,17 @@
+import pathlib
 import pandas as pd
 import plotly.graph_objects as go
 from dash import Dash, dcc, html, Input, Output
 from datetime import datetime
 import os
+
+app = Dash(__name__, title="myflask")
+
+# Declare server for Heroku deployment. Needed for Procfile.
+server = app.server
+
+
+
 
 # Load your data
 def load_data(files):
