@@ -7,6 +7,9 @@ import os
 
 
 
+
+
+
 # Declare server for Heroku deployment. Needed for Procfile.
 server = app.server
 
@@ -368,6 +371,9 @@ def update_graph_live(analysis, location, parameter, frequency, n_clicks):
 
 # Run the app
 if __name__ == '__main__':
+    app.run_server(debug=True)
+
+
+if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8050))
     app.run_server(debug=False, port=port)
-
